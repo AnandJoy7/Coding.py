@@ -1,1 +1,57 @@
+Problem 4
+Alien Dictionary
+
+There is a new alien language which uses English alphabets. However, the order among letters are unknown to you. You receive a list of non-empty words from the dictionary, where words are sorted lexicographically by the rules of this new language. Derive the order of letters in this language.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Sample Input 1:
+
+["baa","abcd","abca","cab","cad"]
+
+Sample Output 1:
+
+"bdac"
+
+Explanation: Based on the order the words are given, 'b' comes before 'd', 'd' comes before 'a', and 'a' comes before 'c'.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Solution 
+
+#first create a DAG(directed acyclic graph) 
+
+Input 1:
+
+["baa","abcd","abca","cab","cad"]
+
+Ouput 1:
+
+"bdac"
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#In this word, it has always had a to z of orders for order in a topological sort
+
+#always a comes before b in order (a -> b)
+
+# The same goes for c comes before d in a vertex 
+
+#check wheather it has in_degree for each char is 0 are not in a graph(DAG)
+
+#then remove one by one in_degree and check each & char in that graph  
+
+# and compare the length of that min for that words 
+
+# check the condition is true and greater than the min(len(word))
+
+#char 1 comes after char 2 so it has until it has been arranged in an order of cases in an array
+
+#return and clear the unstored words in a word to compare and append in an array 
+
+#until condition break in  the DAG linear graph 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
